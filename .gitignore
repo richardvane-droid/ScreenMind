@@ -1,0 +1,41 @@
+# Xcode
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+DerivedData/
+*.ipa
+*.xcarchive
+build/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+
+# Ollama local config
+.ollama/
+
+# API Keys (never commit)
+*.env
+.env.local
+APIKeys.swift
+Secrets.swift
+
+# Node / React (web-config)
+web-config/node_modules/
+web-config/.env
+
+# Test results
+TestResults/
+*.xcresult
+
+# CocoaPods (if used)
+Pods/
+
+# Logs
+*.log

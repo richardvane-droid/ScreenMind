@@ -1,0 +1,43 @@
+name: Build macOS
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: macos-14  # Apple Silicon runner
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Select Xcode
+      run: sudo xcode-select -s /Applications/Xcode_15.4.app
+
+    - name: Show build environment
+      run: |
+        xcodebuild -version
+        swift --version
+
+    - name: Build ScreenMindMac
+      run: |
+        xcodebuild build \
+          -project ScreenMind.xcodeproj \
+          -scheme ScreenMindMac \
+          -destination 'platform=macOS,arch=arm64' \
+          -configuration Debug \
+          CODE_SIGN_IDENTITY="" \
+          CODE_SIGNING_REQUIRED=NO \
+          | xcpretty
+
+    - name: Run Tests
+      run: |
+        xcodebuild test \
+          -project ScreenMind.xcodeproj \
+          -scheme ScreenMindMacTests \
+          -destination 'platform=macOS,arch=arm64' \
+          CODE_SIGN_IDENTITY="" \
+          CODE_SIGNING_REQUIRED=NO \
+          | xcpretty

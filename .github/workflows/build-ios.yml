@@ -1,0 +1,38 @@
+name: Build iOS
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: macos-14
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Select Xcode
+      run: sudo xcode-select -s /Applications/Xcode_15.4.app
+
+    - name: Build ScreenMindIOS
+      run: |
+        xcodebuild build \
+          -project ScreenMind.xcodeproj \
+          -scheme ScreenMindIOS \
+          -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=latest' \
+          -configuration Debug \
+          CODE_SIGN_IDENTITY="" \
+          CODE_SIGNING_REQUIRED=NO \
+          | xcpretty
+
+    - name: Run Tests
+      run: |
+        xcodebuild test \
+          -project ScreenMind.xcodeproj \
+          -scheme ScreenMindIOSTests \
+          -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=latest' \
+          CODE_SIGN_IDENTITY="" \
+          CODE_SIGNING_REQUIRED=NO \
+          | xcpretty
