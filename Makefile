@@ -27,22 +27,23 @@ gen:
 .PHONY: build-mac
 build-mac: gen
 	@echo "▶ Building macOS app..."
-	xcodebuild build \
-	  -project $(XCPROJ) \
-	  -scheme $(SCHEME_MAC) \
-	  -destination "platform=macOS" \
-	  -derivedDataPath $(DERIVED_DATA)/mac \
-	  CODE_SIGN_IDENTITY="" \
-	  CODE_SIGNING_REQUIRED=NO \
-	  CODE_SIGNING_ALLOWED=NO \
-	  | xcbeautify || xcodebuild build \
+	@# xcbeautify 可选，没装就直接用原始输出
+	@if command -v xcbeautify &>/dev/null; then \
+	  xcodebuild build \
 	    -project $(XCPROJ) \
 	    -scheme $(SCHEME_MAC) \
 	    -destination "platform=macOS" \
 	    -derivedDataPath $(DERIVED_DATA)/mac \
-	    CODE_SIGN_IDENTITY="" \
-	    CODE_SIGNING_REQUIRED=NO \
-	    CODE_SIGNING_ALLOWED=NO
+	    CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO \
+	    | xcbeautify; \
+	else \
+	  xcodebuild build \
+	    -project $(XCPROJ) \
+	    -scheme $(SCHEME_MAC) \
+	    -destination "platform=macOS" \
+	    -derivedDataPath $(DERIVED_DATA)/mac \
+	    CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO; \
+	fi
 
 # ──────────────────────────────────────────────────────────
 # 3. Build iOS app (Simulator)
