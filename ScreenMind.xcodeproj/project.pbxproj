@@ -1,0 +1,931 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C2F330E76D72953C872E25C /* ScreenMindBroadcast.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 85F20A47D9BEE9F84D4D2901 /* ScreenMindBroadcast.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		13FC039325C4F400F385E03F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9AFE288F5C13093BC0FC7 /* ContentView.swift */; };
+		19072F1F87965EBF155FE023 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5995D323650295684932494A /* NotificationService.swift */; };
+		3515A4A526FC73A18D110E95 /* ScreenCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326EE7A2B2524E380F02FEE /* ScreenCaptureManager.swift */; };
+		36C515277F21D278200725AA /* ScreenMindCore in Frameworks */ = {isa = PBXBuildFile; productRef = 138659FBA3639A38B2ACF994 /* ScreenMindCore */; };
+		3F850B0E85029CB4CB29A5E6 /* ScreenMindIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13A851B3168E03C393A7E93 /* ScreenMindIOSApp.swift */; };
+		50272811989080D2E69C3C58 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2A583A7AD74A862FF8CEF /* StatusBarController.swift */; };
+		6D7345E3C39C1E9F8BF05B1D /* AnxietyLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFD3A288D366B839BBA8AB3 /* AnxietyLiveActivity.swift */; };
+		797DC37B54150B3ED4FB2383 /* MacAccountMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272F30180C95738342D1166A /* MacAccountMonitor.swift */; };
+		8F887F86C44399D89B47752A /* CaptureCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76ED8563FDE9DB7CA0B182F /* CaptureCoordinator.swift */; };
+		9770C53CFA47E0E64AA3CDDA /* ScreenMindApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819E8D051548D32D6AAAE178 /* ScreenMindApp.swift */; };
+		9914DD4E5428E9811F9355E5 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0511BE546A3E0CCE144C433A /* NotificationManager.swift */; };
+		9944AD5CB1BD2A8806DEAF32 /* DebugWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF5EED031E0EF54C50014E /* DebugWindowController.swift */; };
+		9FB962C5704192C3263D786B /* WidgetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD266343B7FBE001EEDCC9 /* WidgetExtension.swift */; };
+		A0820CB8086B443F4A18B7AF /* OCREngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAFC3B59DA4D49CF6B74682 /* OCREngine.swift */; };
+		B484C8E2ED48FE3520196B06 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11A928F977F432F8149E15C /* SampleHandler.swift */; };
+		BB66949631E62980B2B76118 /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78DBD16BFDF8900F979CCC7 /* SettingsWindowController.swift */; };
+		BE12C319A123AF473859CE46 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EAF71823676B8275F0203A71 /* README.md */; };
+		C4A77B9C6216B830141659D0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7BB8908D657BAFC937AA1D44 /* README.md */; };
+		C6504104EB5F4E43AF21BA5F /* DeviceActivityMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA5F44F03360CD316A536C5 /* DeviceActivityMonitor.swift */; };
+		D313A2201915AEFFF7E34743 /* ScreenMindWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 92B41DE999909814756CDCAA /* ScreenMindWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D993C1541084953B760494B2 /* ScreenMindCore in Frameworks */ = {isa = PBXBuildFile; productRef = F3712F0C28C87255CB5C85A1 /* ScreenMindCore */; };
+		EE52C26D60467BD734BDA54C /* ScreenMindNotification.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D26B7715A0D11DCC4905F5BB /* ScreenMindNotification.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3207F979DF4B69F425D616BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C357AD57814DEDE180CB9FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AEFA59EA3AFE3DAF077BDB3;
+			remoteInfo = ScreenMindBroadcast;
+		};
+		5DE463A71798931ADCEE221E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C357AD57814DEDE180CB9FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 403BDAEC8821B008E3B42006;
+			remoteInfo = ScreenMindWidget;
+		};
+		EACD6A65CAA6142948D46C96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C357AD57814DEDE180CB9FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DE51D7D7EA6CD757F25D774;
+			remoteInfo = ScreenMindNotification;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D5192E5E4EFAEE866ACF13B5 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0C2F330E76D72953C872E25C /* ScreenMindBroadcast.appex in Embed Foundation Extensions */,
+				EE52C26D60467BD734BDA54C /* ScreenMindNotification.appex in Embed Foundation Extensions */,
+				D313A2201915AEFFF7E34743 /* ScreenMindWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0511BE546A3E0CCE144C433A /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		0BAFC3B59DA4D49CF6B74682 /* OCREngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCREngine.swift; sourceTree = "<group>"; };
+		1FBD266343B7FBE001EEDCC9 /* WidgetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetExtension.swift; sourceTree = "<group>"; };
+		272F30180C95738342D1166A /* MacAccountMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacAccountMonitor.swift; sourceTree = "<group>"; };
+		3899F7868E249B1181BD0908 /* ScreenMindCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ScreenMindCore; path = ScreenMindCore; sourceTree = SOURCE_ROOT; };
+		3C1801AEAB2B1211FCBF8F62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4DD72CAFC17F84B2D693E9C1 /* ScreenMindMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScreenMindMac.entitlements; sourceTree = "<group>"; };
+		5824571BD1F783962E6A6763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5995D323650295684932494A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		5B54EBACB0A9092C84E725F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5CD2A583A7AD74A862FF8CEF /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		6A99282B468DFDDF3DECFC4A /* ScreenMindMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenMindMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FFD3A288D366B839BBA8AB3 /* AnxietyLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnxietyLiveActivity.swift; sourceTree = "<group>"; };
+		7BB8908D657BAFC937AA1D44 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		819E8D051548D32D6AAAE178 /* ScreenMindApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenMindApp.swift; sourceTree = "<group>"; };
+		85F20A47D9BEE9F84D4D2901 /* ScreenMindBroadcast.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ScreenMindBroadcast.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		92B41DE999909814756CDCAA /* ScreenMindWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ScreenMindWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A13A851B3168E03C393A7E93 /* ScreenMindIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenMindIOSApp.swift; sourceTree = "<group>"; };
+		A76ED8563FDE9DB7CA0B182F /* CaptureCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureCoordinator.swift; sourceTree = "<group>"; };
+		CAC54B79AFFAF1A901821DDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D26B7715A0D11DCC4905F5BB /* ScreenMindNotification.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ScreenMindNotification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D78DBD16BFDF8900F979CCC7 /* SettingsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindowController.swift; sourceTree = "<group>"; };
+		D7D79D7CAC4375DC74A5083E /* ScreenMindIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScreenMindIOS.entitlements; sourceTree = "<group>"; };
+		D8A1A9E1702C553A2E04A9F8 /* ScreenMindIOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ScreenMindIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E11A928F977F432F8149E15C /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
+		E326EE7A2B2524E380F02FEE /* ScreenCaptureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCaptureManager.swift; sourceTree = "<group>"; };
+		E6AF5EED031E0EF54C50014E /* DebugWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugWindowController.swift; sourceTree = "<group>"; };
+		EAD9AFE288F5C13093BC0FC7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EAF71823676B8275F0203A71 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EEA5F44F03360CD316A536C5 /* DeviceActivityMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActivityMonitor.swift; sourceTree = "<group>"; };
+		FA952AE7AB9EE9B75C773400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		366108939490715166F53CF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D993C1541084953B760494B2 /* ScreenMindCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C032BE4779C8D4A92597D37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36C515277F21D278200725AA /* ScreenMindCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0517AC2BB68DF4075E5B7A51 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5824571BD1F783962E6A6763 /* Info.plist */,
+				D7D79D7CAC4375DC74A5083E /* ScreenMindIOS.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		187CD6CB4AA00E689F292B54 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				819E8D051548D32D6AAAE178 /* ScreenMindApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2030A9537192527BFFD7AF6C /* DeviceMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				EEA5F44F03360CD316A536C5 /* DeviceActivityMonitor.swift */,
+			);
+			path = DeviceMonitor;
+			sourceTree = "<group>";
+		};
+		23DE0D417C5134EF7F3AAA21 /* ScreenCapture */ = {
+			isa = PBXGroup;
+			children = (
+				A76ED8563FDE9DB7CA0B182F /* CaptureCoordinator.swift */,
+				E326EE7A2B2524E380F02FEE /* ScreenCaptureManager.swift */,
+			);
+			path = ScreenCapture;
+			sourceTree = "<group>";
+		};
+		31EDE26BB0685E2487797BFD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EAD9AFE288F5C13093BC0FC7 /* ContentView.swift */,
+				A13A851B3168E03C393A7E93 /* ScreenMindIOSApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		35864422CD314C4BAB283A1F /* ScreenMindBroadcast */ = {
+			isa = PBXGroup;
+			children = (
+				FA952AE7AB9EE9B75C773400 /* Info.plist */,
+				E11A928F977F432F8149E15C /* SampleHandler.swift */,
+			);
+			path = ScreenMindBroadcast;
+			sourceTree = "<group>";
+		};
+		358DA46A13FB0EC562A84331 /* AccountMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				272F30180C95738342D1166A /* MacAccountMonitor.swift */,
+			);
+			path = AccountMonitor;
+			sourceTree = "<group>";
+		};
+		5DEFD8E6F78DCE1BB5987132 = {
+			isa = PBXGroup;
+			children = (
+				81EACA8669D2882FFE85E0F0 /* Packages */,
+				35864422CD314C4BAB283A1F /* ScreenMindBroadcast */,
+				BE142C3E93CD0F9EFFF541AC /* ScreenMindIOS */,
+				9E7310299F85A3A0D6482E6C /* ScreenMindMac */,
+				7ED7829CF133907916A5657F /* ScreenMindNotification */,
+				F2657B769F6E71DF6D0145F8 /* ScreenMindWidget */,
+				B05AAF4B8ECC0C99FD715405 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		662BAA38719BC6BEDC07C74D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CAC54B79AFFAF1A901821DDE /* Info.plist */,
+				4DD72CAFC17F84B2D693E9C1 /* ScreenMindMac.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6D8D491A3157DFD4C15E8366 /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				E6AF5EED031E0EF54C50014E /* DebugWindowController.swift */,
+				5CD2A583A7AD74A862FF8CEF /* StatusBarController.swift */,
+			);
+			path = MenuBar;
+			sourceTree = "<group>";
+		};
+		75080EA232339D1A5FC1DE6A /* ContentAnalyzer */ = {
+			isa = PBXGroup;
+			children = (
+				0511BE546A3E0CCE144C433A /* NotificationManager.swift */,
+			);
+			path = ContentAnalyzer;
+			sourceTree = "<group>";
+		};
+		7ED7829CF133907916A5657F /* ScreenMindNotification */ = {
+			isa = PBXGroup;
+			children = (
+				5B54EBACB0A9092C84E725F4 /* Info.plist */,
+				5995D323650295684932494A /* NotificationService.swift */,
+			);
+			path = ScreenMindNotification;
+			sourceTree = "<group>";
+		};
+		81EACA8669D2882FFE85E0F0 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				3899F7868E249B1181BD0908 /* ScreenMindCore */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		834ED42A7C37630EE33CA133 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D78DBD16BFDF8900F979CCC7 /* SettingsWindowController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		9D7B50AA1C4B5E5FD786D2E8 /* LiveActivity */ = {
+			isa = PBXGroup;
+			children = (
+				6FFD3A288D366B839BBA8AB3 /* AnxietyLiveActivity.swift */,
+			);
+			path = LiveActivity;
+			sourceTree = "<group>";
+		};
+		9E7310299F85A3A0D6482E6C /* ScreenMindMac */ = {
+			isa = PBXGroup;
+			children = (
+				7BB8908D657BAFC937AA1D44 /* README.md */,
+				358DA46A13FB0EC562A84331 /* AccountMonitor */,
+				187CD6CB4AA00E689F292B54 /* App */,
+				75080EA232339D1A5FC1DE6A /* ContentAnalyzer */,
+				6D8D491A3157DFD4C15E8366 /* MenuBar */,
+				D0B46D7508E2C40338F79206 /* OCREngine */,
+				662BAA38719BC6BEDC07C74D /* Resources */,
+				23DE0D417C5134EF7F3AAA21 /* ScreenCapture */,
+				834ED42A7C37630EE33CA133 /* Settings */,
+			);
+			path = ScreenMindMac;
+			sourceTree = "<group>";
+		};
+		B05AAF4B8ECC0C99FD715405 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85F20A47D9BEE9F84D4D2901 /* ScreenMindBroadcast.appex */,
+				D8A1A9E1702C553A2E04A9F8 /* ScreenMindIOS.app */,
+				6A99282B468DFDDF3DECFC4A /* ScreenMindMac.app */,
+				D26B7715A0D11DCC4905F5BB /* ScreenMindNotification.appex */,
+				92B41DE999909814756CDCAA /* ScreenMindWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE142C3E93CD0F9EFFF541AC /* ScreenMindIOS */ = {
+			isa = PBXGroup;
+			children = (
+				EAF71823676B8275F0203A71 /* README.md */,
+				31EDE26BB0685E2487797BFD /* App */,
+				2030A9537192527BFFD7AF6C /* DeviceMonitor */,
+				9D7B50AA1C4B5E5FD786D2E8 /* LiveActivity */,
+				0517AC2BB68DF4075E5B7A51 /* Resources */,
+			);
+			path = ScreenMindIOS;
+			sourceTree = "<group>";
+		};
+		D0B46D7508E2C40338F79206 /* OCREngine */ = {
+			isa = PBXGroup;
+			children = (
+				0BAFC3B59DA4D49CF6B74682 /* OCREngine.swift */,
+			);
+			path = OCREngine;
+			sourceTree = "<group>";
+		};
+		F2657B769F6E71DF6D0145F8 /* ScreenMindWidget */ = {
+			isa = PBXGroup;
+			children = (
+				3C1801AEAB2B1211FCBF8F62 /* Info.plist */,
+				1FBD266343B7FBE001EEDCC9 /* WidgetExtension.swift */,
+			);
+			path = ScreenMindWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		403BDAEC8821B008E3B42006 /* ScreenMindWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 005D165BB0EDC6AC58AB4875 /* Build configuration list for PBXNativeTarget "ScreenMindWidget" */;
+			buildPhases = (
+				A6F20B941113DEF5AB132203 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScreenMindWidget;
+			packageProductDependencies = (
+			);
+			productName = ScreenMindWidget;
+			productReference = 92B41DE999909814756CDCAA /* ScreenMindWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		5DE51D7D7EA6CD757F25D774 /* ScreenMindNotification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F3D8CC0B9C85003C3754CF7 /* Build configuration list for PBXNativeTarget "ScreenMindNotification" */;
+			buildPhases = (
+				610ABE9B40A4AF688F078A3F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScreenMindNotification;
+			packageProductDependencies = (
+			);
+			productName = ScreenMindNotification;
+			productReference = D26B7715A0D11DCC4905F5BB /* ScreenMindNotification.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		6AEFA59EA3AFE3DAF077BDB3 /* ScreenMindBroadcast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A36AFF289C8EA7020E1111C1 /* Build configuration list for PBXNativeTarget "ScreenMindBroadcast" */;
+			buildPhases = (
+				2435E389370B3663D689953D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScreenMindBroadcast;
+			packageProductDependencies = (
+			);
+			productName = ScreenMindBroadcast;
+			productReference = 85F20A47D9BEE9F84D4D2901 /* ScreenMindBroadcast.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		975EA1C70D72414CE7282B55 /* ScreenMindIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C6A1C70A97E03E2A699C9EF /* Build configuration list for PBXNativeTarget "ScreenMindIOS" */;
+			buildPhases = (
+				BCD097AC0D57B2FA3C726492 /* Sources */,
+				DAED46BDA6B2C549422DAA30 /* Resources */,
+				7C032BE4779C8D4A92597D37 /* Frameworks */,
+				D5192E5E4EFAEE866ACF13B5 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				229D202E40DA3B9264AEA408 /* PBXTargetDependency */,
+				341CA1FEEC2584F492A67626 /* PBXTargetDependency */,
+				1F384265F34ECEEE47AEF52D /* PBXTargetDependency */,
+			);
+			name = ScreenMindIOS;
+			packageProductDependencies = (
+				138659FBA3639A38B2ACF994 /* ScreenMindCore */,
+			);
+			productName = ScreenMindIOS;
+			productReference = D8A1A9E1702C553A2E04A9F8 /* ScreenMindIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D9E96FCBE667DE573FAF78D2 /* ScreenMindMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D0968D8D02ABFD05E345F30 /* Build configuration list for PBXNativeTarget "ScreenMindMac" */;
+			buildPhases = (
+				A6A595E047CB86FBB728E8B0 /* Sources */,
+				8F90EB69E92CD13527AE9D1A /* Resources */,
+				366108939490715166F53CF8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScreenMindMac;
+			packageProductDependencies = (
+				F3712F0C28C87255CB5C85A1 /* ScreenMindCore */,
+			);
+			productName = ScreenMindMac;
+			productReference = 6A99282B468DFDDF3DECFC4A /* ScreenMindMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C357AD57814DEDE180CB9FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					403BDAEC8821B008E3B42006 = {
+						DevelopmentTeam = "";
+					};
+					5DE51D7D7EA6CD757F25D774 = {
+						DevelopmentTeam = "";
+					};
+					6AEFA59EA3AFE3DAF077BDB3 = {
+						DevelopmentTeam = "";
+					};
+					975EA1C70D72414CE7282B55 = {
+						DevelopmentTeam = "";
+					};
+					D9E96FCBE667DE573FAF78D2 = {
+						DevelopmentTeam = "";
+					};
+				};
+			};
+			buildConfigurationList = 21E32570FEAEBFA908BFEC24 /* Build configuration list for PBXProject "ScreenMind" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 5DEFD8E6F78DCE1BB5987132;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				5E2E3FF65B3C68B534107388 /* XCLocalSwiftPackageReference "ScreenMindCore" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B05AAF4B8ECC0C99FD715405 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6AEFA59EA3AFE3DAF077BDB3 /* ScreenMindBroadcast */,
+				975EA1C70D72414CE7282B55 /* ScreenMindIOS */,
+				D9E96FCBE667DE573FAF78D2 /* ScreenMindMac */,
+				5DE51D7D7EA6CD757F25D774 /* ScreenMindNotification */,
+				403BDAEC8821B008E3B42006 /* ScreenMindWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8F90EB69E92CD13527AE9D1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4A77B9C6216B830141659D0 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAED46BDA6B2C549422DAA30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE12C319A123AF473859CE46 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2435E389370B3663D689953D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B484C8E2ED48FE3520196B06 /* SampleHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		610ABE9B40A4AF688F078A3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19072F1F87965EBF155FE023 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6A595E047CB86FBB728E8B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F887F86C44399D89B47752A /* CaptureCoordinator.swift in Sources */,
+				9944AD5CB1BD2A8806DEAF32 /* DebugWindowController.swift in Sources */,
+				797DC37B54150B3ED4FB2383 /* MacAccountMonitor.swift in Sources */,
+				9914DD4E5428E9811F9355E5 /* NotificationManager.swift in Sources */,
+				A0820CB8086B443F4A18B7AF /* OCREngine.swift in Sources */,
+				3515A4A526FC73A18D110E95 /* ScreenCaptureManager.swift in Sources */,
+				9770C53CFA47E0E64AA3CDDA /* ScreenMindApp.swift in Sources */,
+				BB66949631E62980B2B76118 /* SettingsWindowController.swift in Sources */,
+				50272811989080D2E69C3C58 /* StatusBarController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6F20B941113DEF5AB132203 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FB962C5704192C3263D786B /* WidgetExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCD097AC0D57B2FA3C726492 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D7345E3C39C1E9F8BF05B1D /* AnxietyLiveActivity.swift in Sources */,
+				13FC039325C4F400F385E03F /* ContentView.swift in Sources */,
+				C6504104EB5F4E43AF21BA5F /* DeviceActivityMonitor.swift in Sources */,
+				3F850B0E85029CB4CB29A5E6 /* ScreenMindIOSApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F384265F34ECEEE47AEF52D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 403BDAEC8821B008E3B42006 /* ScreenMindWidget */;
+			targetProxy = 5DE463A71798931ADCEE221E /* PBXContainerItemProxy */;
+		};
+		229D202E40DA3B9264AEA408 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6AEFA59EA3AFE3DAF077BDB3 /* ScreenMindBroadcast */;
+			targetProxy = 3207F979DF4B69F425D616BF /* PBXContainerItemProxy */;
+		};
+		341CA1FEEC2584F492A67626 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DE51D7D7EA6CD757F25D774 /* ScreenMindNotification */;
+			targetProxy = EACD6A65CAA6142948D46C96 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00B1974F0D16C5573585EBA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		07696955F32AAA8F48741405 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ScreenMindMac/Resources/ScreenMindMac.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = ScreenMindMac/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LSUIElement = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				OTHER_LDFLAGS = "-framework ScreenCaptureKit -framework Vision -framework CoreMedia";
+				PRODUCT_BUNDLE_IDENTIFIER = com.screenmind.mac;
+				PRODUCT_NAME = ScreenMind;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		20BC1AAD8D257B7D5C3CB72C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ScreenMindNotification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.screenmind.ios.notification;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		242E3774175FB85C2B95A314 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ScreenMindWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.screenmind.ios.widget;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		32DB32FD52A19CD476B9365B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ScreenMindBroadcast/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.screenmind.ios.broadcast;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4570866D84D36D7A06BAB4A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ScreenMindWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.screenmind.ios.widget;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6ED4E18AA37FC49DAAB49748 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		9E6C12867638E026DDD75A3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ScreenMindIOS/Resources/ScreenMindIOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = ScreenMindIOS/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.screenmind.ios;
+				PRODUCT_NAME = ScreenMind;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C42E4C6041289C2481BE388E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ScreenMindBroadcast/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.screenmind.ios.broadcast;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E666CA0C343C68FE607B3D72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ScreenMindIOS/Resources/ScreenMindIOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = ScreenMindIOS/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.screenmind.ios;
+				PRODUCT_NAME = ScreenMind;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EED8590059936BF40758A31B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ScreenMindNotification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.screenmind.ios.notification;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FC70B52F073B5C867D9F2788 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ScreenMindMac/Resources/ScreenMindMac.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = ScreenMindMac/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LSUIElement = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				OTHER_LDFLAGS = "-framework ScreenCaptureKit -framework Vision -framework CoreMedia";
+				PRODUCT_BUNDLE_IDENTIFIER = com.screenmind.mac;
+				PRODUCT_NAME = ScreenMind;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		005D165BB0EDC6AC58AB4875 /* Build configuration list for PBXNativeTarget "ScreenMindWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4570866D84D36D7A06BAB4A2 /* Debug */,
+				242E3774175FB85C2B95A314 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1C6A1C70A97E03E2A699C9EF /* Build configuration list for PBXNativeTarget "ScreenMindIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E6C12867638E026DDD75A3D /* Debug */,
+				E666CA0C343C68FE607B3D72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		21E32570FEAEBFA908BFEC24 /* Build configuration list for PBXProject "ScreenMind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00B1974F0D16C5573585EBA8 /* Debug */,
+				6ED4E18AA37FC49DAAB49748 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5F3D8CC0B9C85003C3754CF7 /* Build configuration list for PBXNativeTarget "ScreenMindNotification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20BC1AAD8D257B7D5C3CB72C /* Debug */,
+				EED8590059936BF40758A31B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7D0968D8D02ABFD05E345F30 /* Build configuration list for PBXNativeTarget "ScreenMindMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC70B52F073B5C867D9F2788 /* Debug */,
+				07696955F32AAA8F48741405 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A36AFF289C8EA7020E1111C1 /* Build configuration list for PBXNativeTarget "ScreenMindBroadcast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32DB32FD52A19CD476B9365B /* Debug */,
+				C42E4C6041289C2481BE388E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		5E2E3FF65B3C68B534107388 /* XCLocalSwiftPackageReference "ScreenMindCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ScreenMindCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		138659FBA3639A38B2ACF994 /* ScreenMindCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenMindCore;
+		};
+		F3712F0C28C87255CB5C85A1 /* ScreenMindCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScreenMindCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 5C357AD57814DEDE180CB9FE /* Project object */;
+}
