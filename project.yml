@@ -31,8 +31,9 @@ targets:
         INFOPLIST_FILE: ScreenMindMac/Resources/Info.plist
         CODE_SIGN_ENTITLEMENTS: ScreenMindMac/Resources/ScreenMindMac.entitlements
         ENABLE_HARDENED_RUNTIME: YES
-        # 菜单栏 App，不在 Dock 显示
         LSUIElement: YES
+        # M2: ScreenCaptureKit + Vision frameworks
+        OTHER_LDFLAGS: "-framework ScreenCaptureKit -framework Vision -framework CoreMedia"
 
   # ─── iOS App ─────────────────────────────────────────────────────────────
   ScreenMindIOS:

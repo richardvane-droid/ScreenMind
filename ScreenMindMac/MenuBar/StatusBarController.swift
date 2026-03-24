@@ -1,132 +1,123 @@
 import AppKit
 import ScreenMindCore
+import OSLog
 
-/// Owns the NSStatusItem and drives the monitoring pipeline.
+private let logger = Logger(subsystem: "com.screenmind.mac", category: "StatusBar")
+
+/// 持有 NSStatusItem 并驱动完整监控管道。
+/// M2: 接入 CaptureCoordinator，验证 OCR 输出。
+/// M3: AnxietyScorer 将在此接入。
 @MainActor
 final class StatusBarController {
 
     // MARK: - Status item
     private let statusItem: NSStatusItem
-    private var statusMenu: NSMenu?
 
-    // MARK: - Core services (injected / shared)
-    private let anxietyScorer = AnxietyScorer()
-    private let hrvManager = HRVManager()
-    private let suggestionEngine = SuggestionEngine()
-    private let accountAssessor = AccountAssessor()
-    private let screenCaptureManager = ScreenCaptureManager()
-    private let notificationManager = NotificationManager()
+    // MARK: - Pipeline
+    private let coordinator = CaptureCoordinator()
 
-    // MARK: - State
-    private var currentAnxietyScore: Double = 0.0
-    private var isMonitoring: Bool = false
-    private var isPaused: Bool = false   // e.g. paused via iPhone Action Button notification
-
-    // Dynamic threshold = baseThreshold × HRV multiplier
-    private var baseThreshold: Double = 0.6
-    private var dynamicThreshold: Double = 0.6
-
-    // Cooldown: skip notifications for N minutes after last one
-    private var lastNotificationDate: Date?
-    private var cooldownMinutes: Int = 5
+    // MARK: - 调试窗口（M2 用）
+    private var debugWindowController: DebugWindowController?
 
     // MARK: - Init
 
     init() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         setupMenu()
-        updateIcon(anxious: false)
+        updateIcon(state: .idle)
+
+        // 监听 OCR 结果（M3 会在这里接入焦虑分析）
+        coordinator.onResult = { [weak self] result in
+            self?.handlePipelineResult(result)
+        }
     }
 
     // MARK: - Monitoring lifecycle
 
     func startMonitoring() {
-        guard !isMonitoring else { return }
-        isMonitoring = true
-        updateIcon(anxious: false)
-
         Task {
-            // Request HRV baseline (non-fatal if HealthKit unavailable on Mac)
-            try? await hrvManager.requestAuthorization()
-            try? await hrvManager.refreshBaseline()
+            await coordinator.start()
+            updateIcon(state: coordinator.permissionGranted ? .monitoring : .error)
         }
-
-        screenCaptureManager.onFrame = { [weak self] ocrText in
-            guard let self, !self.isPaused else { return }
-            Task { await self.processFrame(text: ocrText) }
-        }
-        screenCaptureManager.start()
     }
 
     func stopMonitoring() {
-        isMonitoring = false
-        screenCaptureManager.stop()
-        updateIcon(anxious: false)
+        coordinator.stop()
+        updateIcon(state: .idle)
     }
 
     func pauseMonitoring(minutes: Int = 15) {
-        isPaused = true
-        updateIcon(anxious: false)
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(minutes * 60)) { [weak self] in
-            self?.isPaused = false
-        }
+        coordinator.pause(minutes: minutes)
+        updateIcon(state: .paused)
     }
 
-    // MARK: - Frame processing
+    // MARK: - Pipeline result handler
 
-    private func processFrame(text: String) async {
-        guard !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+    private func handlePipelineResult(_ result: PipelineResult) {
+        let app = result.frontAppName ?? "未知应用"
+        let chars = result.ocrResult.text.count
+        let lang = result.ocrResult.language.rawValue
+        logger.info("OCR [\(app)] \(chars) chars, lang=\(lang), \(result.ocrResult.durationMs)ms")
 
-        // Update dynamic threshold from latest HRV
-        if let hrv = try? await hrvManager.latestHRV() {
-            let multiplier = hrvManager.dynamicMultiplier(currentSDNN: hrv.sdnn)
-            dynamicThreshold = min(max(baseThreshold * multiplier, 0.2), 0.9)
-        }
+        // 转发到调试窗口（如已打开）
+        debugWindowController?.appendLog(result)
 
-        let result = await anxietyScorer.analyze(text: text)
-        currentAnxietyScore = result.score
-
-        await MainActor.run {
-            updateIcon(anxious: result.score > dynamicThreshold)
-        }
-
-        // Trigger notification if score exceeds threshold and cooldown has passed
-        if result.score > dynamicThreshold, shouldNotify() {
-            let suggestions = await suggestionEngine.enabledSuggestions()
-            await notificationManager.sendAnxietyAlert(score: result.score,
-                                                       keywords: result.dominantKeywords,
-                                                       suggestions: suggestions)
-            lastNotificationDate = Date()
-        }
+        // TODO M3: 传给 AnxietyScorer
     }
 
-    private func shouldNotify() -> Bool {
-        guard let last = lastNotificationDate else { return true }
-        return Date().timeIntervalSince(last) > Double(cooldownMinutes * 60)
-    }
-
-    // MARK: - Menu setup
+    // MARK: - Menu
 
     private func setupMenu() {
         let menu = NSMenu()
-        menu.addItem(withTitle: "ScreenMind", action: nil, keyEquivalent: "")
+
+        let titleItem = NSMenuItem(title: "ScreenMind", action: nil, keyEquivalent: "")
+        titleItem.isEnabled = false
+        menu.addItem(titleItem)
         menu.addItem(.separator())
-        menu.addItem(withTitle: "暂停 15 分钟", action: #selector(pauseTapped), keyEquivalent: "p")
-            .target = self
-        menu.addItem(withTitle: "偏好设置...", action: #selector(openSettings), keyEquivalent: ",")
-            .target = self
+
+        let pauseItem = NSMenuItem(title: "暂停 15 分钟",
+                                   action: #selector(pauseTapped),
+                                   keyEquivalent: "p")
+        pauseItem.target = self
+        menu.addItem(pauseItem)
+
+        let debugItem = NSMenuItem(title: "OCR 调试窗口",
+                                   action: #selector(openDebug),
+                                   keyEquivalent: "d")
+        debugItem.target = self
+        menu.addItem(debugItem)
+
         menu.addItem(.separator())
-        menu.addItem(withTitle: "退出 ScreenMind", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+
+        let settingsItem = NSMenuItem(title: "偏好设置…",
+                                      action: #selector(openSettings),
+                                      keyEquivalent: ",")
+        settingsItem.target = self
+        menu.addItem(settingsItem)
+
+        menu.addItem(.separator())
+        menu.addItem(withTitle: "退出 ScreenMind",
+                     action: #selector(NSApplication.terminate(_:)),
+                     keyEquivalent: "q")
+
         statusItem.menu = menu
-        statusMenu = menu
     }
 
-    // MARK: - Icon
+    // MARK: - Icon states
 
-    private func updateIcon(anxious: Bool) {
-        let name = anxious ? "brain.head.profile.fill" : "brain.head.profile"
-        statusItem.button?.image = NSImage(systemSymbolName: name, accessibilityDescription: "ScreenMind")
-        statusItem.button?.contentTintColor = anxious ? .systemRed : .controlTextColor
+    enum IconState { case idle, monitoring, paused, error, anxious }
+
+    private func updateIcon(state: IconState) {
+        let (symbolName, color): (String, NSColor) = switch state {
+        case .idle:       ("brain.head.profile",      .secondaryLabelColor)
+        case .monitoring: ("brain.head.profile",      .controlTextColor)
+        case .paused:     ("brain.head.profile",      .systemOrange)
+        case .error:      ("exclamationmark.triangle", .systemRed)
+        case .anxious:    ("brain.head.profile.fill",  .systemRed)
+        }
+        statusItem.button?.image = NSImage(systemSymbolName: symbolName,
+                                           accessibilityDescription: "ScreenMind")
+        statusItem.button?.contentTintColor = color
     }
 
     // MARK: - Actions
@@ -135,7 +126,18 @@ final class StatusBarController {
         pauseMonitoring(minutes: 15)
     }
 
+    @objc private func openDebug() {
+        if debugWindowController == nil {
+            debugWindowController = DebugWindowController()
+        }
+        debugWindowController?.showWindow(nil)
+        debugWindowController?.window?.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
+    }
+
     @objc private func openSettings() {
         SettingsWindowController.shared.showWindow(nil)
+        SettingsWindowController.shared.window?.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
     }
 }
