@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <!-- ── AnxietyRecord ─────────────────────────────────────── -->
+    <entity name="AnxietyRecord" representedClassName="AnxietyRecord" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="timestamp" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="anxietyScore" optional="NO" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="rawText" optional="YES" attributeType="String"/>
+        <attribute name="appName" optional="YES" attributeType="String"/>
+        <attribute name="platform" optional="NO" attributeType="String" defaultValueString="mac"/>
+        <!-- mac | ios -->
+        <attribute name="hrvAtTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="dynamicThreshold" optional="NO" attributeType="Double" defaultValueString="0.6" usesScalarValueType="YES"/>
+        <attribute name="notificationSent" optional="NO" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="triggeredSuggestion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RelaxationSuggestion" inverseName="triggeredBy" inverseEntity="RelaxationSuggestion"/>
+    </entity>
+
+    <!-- ── RelaxationSuggestion ──────────────────────────────── -->
+    <entity name="RelaxationSuggestion" representedClassName="RelaxationSuggestion" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="title" optional="NO" attributeType="String" defaultValueString=""/>
+        <attribute name="detail" optional="YES" attributeType="String"/>
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <!-- 地理地址（如填写则预计算车程） -->
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="travelMinutes" optional="YES" attributeType="Integer32" defaultValueString="0" usesScalarValueType="YES"/>
+        <!-- 最后一次计算的车程分钟数 -->
+        <attribute name="travelUpdatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isEnabled" optional="NO" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="sortOrder" optional="NO" attributeType="Integer32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="triggeredBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AnxietyRecord" inverseName="triggeredSuggestion" inverseEntity="AnxietyRecord"/>
+    </entity>
+
+    <!-- ── VideoAccountProfile ───────────────────────────────── -->
+    <entity name="VideoAccountProfile" representedClassName="VideoAccountProfile" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="accountName" optional="NO" attributeType="String" defaultValueString=""/>
+        <!-- 抖音/微信公众号 账号名称 -->
+        <attribute name="platform" optional="NO" attributeType="String" defaultValueString="douyin"/>
+        <!-- douyin | wechat_mp -->
+        <attribute name="anxietyScore" optional="NO" attributeType="Double" defaultValueString="0.5" usesScalarValueType="YES"/>
+        <!-- 0–1, 由豆包 API 评估 -->
+        <attribute name="styleNotes" optional="YES" attributeType="String"/>
+        <attribute name="isWhitelisted" optional="NO" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="lastAssessedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="assessmentSource" optional="YES" attributeType="String"/>
+        <!-- doubao | ollama -->
+    </entity>
+
+    <!-- ── HRVBaseline ────────────────────────────────────────── -->
+    <entity name="HRVBaseline" representedClassName="HRVBaseline" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="date" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="sdnn" optional="NO" attributeType="Double" defaultValueString="30.0" usesScalarValueType="YES"/>
+        <!-- ms -->
+        <attribute name="rmssd" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="platform" optional="NO" attributeType="String" defaultValueString="ios"/>
+        <!-- ios | mac (future) -->
+        <attribute name="rollingAvg30d" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <!-- 30日滚动均值，每日更新 -->
+    </entity>
+
+    <!-- ── AppConfig ──────────────────────────────────────────── -->
+    <entity name="AppConfig" representedClassName="AppConfig" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="key" optional="NO" attributeType="String" defaultValueString=""/>
+        <attribute name="value" optional="YES" attributeType="String"/>
+        <!-- JSON-encoded value string -->
+        <attribute name="updatedAt" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+
+    <elements>
+        <element name="AnxietyRecord" positionX="-63" positionY="-18" width="128" height="194"/>
+        <element name="RelaxationSuggestion" positionX="162" positionY="-18" width="128" height="209"/>
+        <element name="VideoAccountProfile" positionX="-63" positionY="261" width="128" height="164"/>
+        <element name="HRVBaseline" positionX="162" positionY="261" width="128" height="119"/>
+        <element name="AppConfig" positionX="387" positionY="-18" width="128" height="89"/>
+    </elements>
+</model>

@@ -1,0 +1,93 @@
+name: ScreenMind
+options:
+  bundleIdPrefix: com.screenmind
+  createIntermediateGroups: true
+  xcodeVersion: "15.4"
+
+packages:
+  ScreenMindCore:
+    path: ScreenMindCore
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    DEVELOPMENT_TEAM: ""   # ← 填入你的 Apple Developer Team ID
+
+targets:
+
+  # ─── macOS App ───────────────────────────────────────────────────────────
+  ScreenMindMac:
+    type: application
+    platform: macOS
+    deploymentTarget: "13.0"
+    sources:
+      - path: ScreenMindMac
+    dependencies:
+      - package: ScreenMindCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.screenmind.mac
+        PRODUCT_NAME: ScreenMind
+        INFOPLIST_FILE: ScreenMindMac/Resources/Info.plist
+        CODE_SIGN_ENTITLEMENTS: ScreenMindMac/Resources/ScreenMindMac.entitlements
+        ENABLE_HARDENED_RUNTIME: YES
+        # 菜单栏 App，不在 Dock 显示
+        LSUIElement: YES
+
+  # ─── iOS App ─────────────────────────────────────────────────────────────
+  ScreenMindIOS:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: ScreenMindIOS
+    dependencies:
+      - package: ScreenMindCore
+      - target: ScreenMindBroadcast
+        embed: true
+      - target: ScreenMindNotification
+        embed: true
+      - target: ScreenMindWidget
+        embed: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.screenmind.ios
+        PRODUCT_NAME: ScreenMind
+        INFOPLIST_FILE: ScreenMindIOS/Resources/Info.plist
+        CODE_SIGN_ENTITLEMENTS: ScreenMindIOS/Resources/ScreenMindIOS.entitlements
+
+  # ─── iOS Broadcast Extension (Layer 2) ───────────────────────────────────
+  ScreenMindBroadcast:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: ScreenMindBroadcast
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.screenmind.ios.broadcast
+        INFOPLIST_FILE: ScreenMindBroadcast/Info.plist
+
+  # ─── iOS Notification Service Extension (Layer 1) ────────────────────────
+  ScreenMindNotification:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: ScreenMindNotification
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.screenmind.ios.notification
+        INFOPLIST_FILE: ScreenMindNotification/Info.plist
+
+  # ─── iOS Widget Extension ─────────────────────────────────────────────────
+  ScreenMindWidget:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: ScreenMindWidget
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.screenmind.ios.widget
+        INFOPLIST_FILE: ScreenMindWidget/Info.plist
