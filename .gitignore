@@ -39,3 +39,6 @@ Pods/
 
 # Logs
 *.log
+
+# GitHub token (local only)
+.gh_token
