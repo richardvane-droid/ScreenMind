@@ -29,6 +29,10 @@
         <attribute name="travelUpdatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isEnabled" optional="NO" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
         <attribute name="sortOrder" optional="NO" attributeType="Integer32" defaultValueString="0" usesScalarValueType="YES"/>
+        <!-- M6 新增：建议分类（place|fitness|course|food|entertainment|home_service） -->
+        <attribute name="category" optional="YES" attributeType="String" defaultValueString="place"/>
+        <!-- M6 新增：服务下单配置（JSON 序列化的 ServiceOrderConfig，线上服务类才有） -->
+        <attribute name="serviceConfigJSON" optional="YES" attributeType="String"/>
         <relationship name="triggeredBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AnxietyRecord" inverseName="triggeredSuggestion" inverseEntity="AnxietyRecord"/>
     </entity>
 
@@ -70,11 +74,40 @@
         <attribute name="updatedAt" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
 
+    <!-- ── InfluencerTip ─────────────────────────────────────── -->
+    <!-- M7 新增：养生达人推荐条目（从 X.com / 微博抓取 + AI 加工后存入） -->
+    <entity name="InfluencerTip" representedClassName="InfluencerTip" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <!-- 来源达人：bryan_johnson | huberman | peter_attia | 等 -->
+        <attribute name="influencerKey" optional="NO" attributeType="String" defaultValueString=""/>
+        <!-- 达人显示名（如 "Bryan Johnson"） -->
+        <attribute name="influencerName" optional="NO" attributeType="String" defaultValueString=""/>
+        <!-- 原始帖子 URL（X.com 或微博链接） -->
+        <attribute name="sourceURL" optional="YES" attributeType="String"/>
+        <!-- 原始帖子内容（英文/中文，从平台抓取） -->
+        <attribute name="originalContent" optional="YES" attributeType="String"/>
+        <!-- AI 加工后的中文抗焦虑建议摘要（50–150 字） -->
+        <attribute name="processedTip" optional="NO" attributeType="String" defaultValueString=""/>
+        <!-- 建议所属分类（对应 SuggestionCategory rawValue） -->
+        <attribute name="category" optional="NO" attributeType="String" defaultValueString="fitness"/>
+        <!-- 建议的具体行动项（供 AlertPanel 展示为卡片标题） -->
+        <attribute name="actionTitle" optional="NO" attributeType="String" defaultValueString=""/>
+        <!-- 帖子发布时间（用于判断数据是否过期） -->
+        <attribute name="postedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <!-- 抓取并处理的时间 -->
+        <attribute name="fetchedAt" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+        <!-- 是否已展示给用户（用于去重推送） -->
+        <attribute name="hasBeenShown" optional="NO" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <!-- 置信度评分（AI 评估这条建议的可靠性，0.0–1.0） -->
+        <attribute name="confidenceScore" optional="YES" attributeType="Double" defaultValueString="0.7" usesScalarValueType="YES"/>
+    </entity>
+
     <elements>
         <element name="AnxietyRecord" positionX="-63" positionY="-18" width="128" height="194"/>
-        <element name="RelaxationSuggestion" positionX="162" positionY="-18" width="128" height="209"/>
+        <element name="RelaxationSuggestion" positionX="162" positionY="-18" width="128" height="254"/>
         <element name="VideoAccountProfile" positionX="-63" positionY="261" width="128" height="164"/>
         <element name="HRVBaseline" positionX="162" positionY="261" width="128" height="119"/>
         <element name="AppConfig" positionX="387" positionY="-18" width="128" height="89"/>
+        <element name="InfluencerTip" positionX="387" positionY="150" width="128" height="284"/>
     </elements>
 </model>

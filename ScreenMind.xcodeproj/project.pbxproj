@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		/* ── M3-M10 新增文件（按字母顺序排列） ── */
+		AA11223344556601AABB0001 /* AccountDetector.swift in Sources */      = {isa = PBXBuildFile; fileRef = AA11223344556602AABB0001 /* AccountDetector.swift */; };
+		AA11223344556601AABB0002 /* AlertPanel.swift in Sources */           = {isa = PBXBuildFile; fileRef = AA11223344556602AABB0002 /* AlertPanel.swift */; };
+		AA11223344556601AABB0003 /* AnxietyPipeline.swift in Sources */      = {isa = PBXBuildFile; fileRef = AA11223344556602AABB0003 /* AnxietyPipeline.swift */; };
+		AA11223344556601AABB0004 /* ComputerUseOrderAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA11223344556602AABB0004 /* ComputerUseOrderAgent.swift */; };
+		AA11223344556601AABB0005 /* DashboardHTML.swift in Sources */        = {isa = PBXBuildFile; fileRef = AA11223344556602AABB0005 /* DashboardHTML.swift */; };
+		AA11223344556601AABB0006 /* FacePatterns.swift in Sources */         = {isa = PBXBuildFile; fileRef = AA11223344556602AABB0006 /* FacePatterns.swift */; };
+		AA11223344556601AABB0007 /* LEDMatrixController.swift in Sources */  = {isa = PBXBuildFile; fileRef = AA11223344556602AABB0007 /* LEDMatrixController.swift */; };
+		AA11223344556601AABB0008 /* WebMonitorBroadcaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA11223344556602AABB0008 /* WebMonitorBroadcaster.swift */; };
+		AA11223344556601AABB0009 /* WebMonitorServer.swift in Sources */     = {isa = PBXBuildFile; fileRef = AA11223344556602AABB0009 /* WebMonitorServer.swift */; };
 		0C2F330E76D72953C872E25C /* ScreenMindBroadcast.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 85F20A47D9BEE9F84D4D2901 /* ScreenMindBroadcast.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		13FC039325C4F400F385E03F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD9AFE288F5C13093BC0FC7 /* ContentView.swift */; };
 		19072F1F87965EBF155FE023 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5995D323650295684932494A /* NotificationService.swift */; };
@@ -73,6 +83,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		/* ── M3-M10 新增文件引用 ── */
+		AA11223344556602AABB0001 /* AccountDetector.swift */      = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetector.swift;      sourceTree = "<group>"; };
+		AA11223344556602AABB0002 /* AlertPanel.swift */           = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPanel.swift;           sourceTree = "<group>"; };
+		AA11223344556602AABB0003 /* AnxietyPipeline.swift */      = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnxietyPipeline.swift;      sourceTree = "<group>"; };
+		AA11223344556602AABB0004 /* ComputerUseOrderAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerUseOrderAgent.swift; sourceTree = "<group>"; };
+		AA11223344556602AABB0005 /* DashboardHTML.swift */        = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHTML.swift;        sourceTree = "<group>"; };
+		AA11223344556602AABB0006 /* FacePatterns.swift */         = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacePatterns.swift;         sourceTree = "<group>"; };
+		AA11223344556602AABB0007 /* LEDMatrixController.swift */  = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEDMatrixController.swift;  sourceTree = "<group>"; };
+		AA11223344556602AABB0008 /* WebMonitorBroadcaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebMonitorBroadcaster.swift; sourceTree = "<group>"; };
+		AA11223344556602AABB0009 /* WebMonitorServer.swift */     = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebMonitorServer.swift;     sourceTree = "<group>"; };
 		0511BE546A3E0CCE144C433A /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		0BAFC3B59DA4D49CF6B74682 /* OCREngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCREngine.swift; sourceTree = "<group>"; };
 		1FBD266343B7FBE001EEDCC9 /* WidgetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetExtension.swift; sourceTree = "<group>"; };
@@ -181,9 +201,58 @@
 		358DA46A13FB0EC562A84331 /* AccountMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				AA11223344556602AABB0001 /* AccountDetector.swift */,
 				272F30180C95738342D1166A /* MacAccountMonitor.swift */,
 			);
 			path = AccountMonitor;
+			sourceTree = "<group>";
+		};
+		/* ── M8：AlertPanel 文件夹组 ── */
+		AA11223344556603AABB0001 /* AlertPanel */ = {
+			isa = PBXGroup;
+			children = (
+				AA11223344556602AABB0002 /* AlertPanel.swift */,
+			);
+			path = AlertPanel;
+			sourceTree = "<group>";
+		};
+		/* ── M3：AnxietyPipeline 文件夹组 ── */
+		AA11223344556603AABB0002 /* AnxietyPipeline */ = {
+			isa = PBXGroup;
+			children = (
+				AA11223344556602AABB0003 /* AnxietyPipeline.swift */,
+			);
+			path = AnxietyPipeline;
+			sourceTree = "<group>";
+		};
+		/* ── M6：OrderAgent 文件夹组 ── */
+		AA11223344556603AABB0003 /* OrderAgent */ = {
+			isa = PBXGroup;
+			children = (
+				AA11223344556602AABB0004 /* ComputerUseOrderAgent.swift */,
+			);
+			path = OrderAgent;
+			sourceTree = "<group>";
+		};
+		/* ── M9：WebMonitor 文件夹组（Dashboard + SSE 服务器）── */
+		AA11223344556603AABB0004 /* WebMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				AA11223344556602AABB0005 /* DashboardHTML.swift */,
+				AA11223344556602AABB0008 /* WebMonitorBroadcaster.swift */,
+				AA11223344556602AABB0009 /* WebMonitorServer.swift */,
+			);
+			path = WebMonitor;
+			sourceTree = "<group>";
+		};
+		/* ── M10：LEDMatrix 文件夹组（表情图案 + 串口驱动）── */
+		AA11223344556603AABB0005 /* LEDMatrix */ = {
+			isa = PBXGroup;
+			children = (
+				AA11223344556602AABB0006 /* FacePatterns.swift */,
+				AA11223344556602AABB0007 /* LEDMatrixController.swift */,
+			);
+			path = LEDMatrix;
 			sourceTree = "<group>";
 		};
 		5DEFD8E6F78DCE1BB5987132 = {
@@ -262,14 +331,19 @@
 			isa = PBXGroup;
 			children = (
 				7BB8908D657BAFC937AA1D44 /* README.md */,
-				358DA46A13FB0EC562A84331 /* AccountMonitor */,
+				358DA46A13FB0EC562A84331 /* AccountMonitor */,     /* M5: AccountDetector */
+				AA11223344556603AABB0001 /* AlertPanel */,         /* M8: SwiftUI 浮窗 */
+				AA11223344556603AABB0002 /* AnxietyPipeline */,    /* M3: 焦虑评分管道 */
 				187CD6CB4AA00E689F292B54 /* App */,
 				75080EA232339D1A5FC1DE6A /* ContentAnalyzer */,
+				AA11223344556603AABB0005 /* LEDMatrix */,          /* M10: LED 矩阵驱动 */
 				6D8D491A3157DFD4C15E8366 /* MenuBar */,
 				D0B46D7508E2C40338F79206 /* OCREngine */,
+				AA11223344556603AABB0003 /* OrderAgent */,         /* M6: 电商下单代理 */
 				662BAA38719BC6BEDC07C74D /* Resources */,
 				23DE0D417C5134EF7F3AAA21 /* ScreenCapture */,
 				834ED42A7C37630EE33CA133 /* Settings */,
+				AA11223344556603AABB0004 /* WebMonitor */,         /* M9: 副屏 Dashboard */
 			);
 			path = ScreenMindMac;
 			sourceTree = "<group>";
@@ -505,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				/* ── 原有文件 ── */
 				8F887F86C44399D89B47752A /* CaptureCoordinator.swift in Sources */,
 				9944AD5CB1BD2A8806DEAF32 /* DebugWindowController.swift in Sources */,
 				797DC37B54150B3ED4FB2383 /* MacAccountMonitor.swift in Sources */,
@@ -514,6 +589,16 @@
 				9770C53CFA47E0E64AA3CDDA /* ScreenMindApp.swift in Sources */,
 				BB66949631E62980B2B76118 /* SettingsWindowController.swift in Sources */,
 				50272811989080D2E69C3C58 /* StatusBarController.swift in Sources */,
+				/* ── M3-M10 新增文件 ── */
+				AA11223344556601AABB0001 /* AccountDetector.swift in Sources */,
+				AA11223344556601AABB0002 /* AlertPanel.swift in Sources */,
+				AA11223344556601AABB0003 /* AnxietyPipeline.swift in Sources */,
+				AA11223344556601AABB0004 /* ComputerUseOrderAgent.swift in Sources */,
+				AA11223344556601AABB0005 /* DashboardHTML.swift in Sources */,
+				AA11223344556601AABB0006 /* FacePatterns.swift in Sources */,
+				AA11223344556601AABB0007 /* LEDMatrixController.swift in Sources */,
+				AA11223344556601AABB0008 /* WebMonitorBroadcaster.swift in Sources */,
+				AA11223344556601AABB0009 /* WebMonitorServer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
